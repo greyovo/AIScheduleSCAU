@@ -1,56 +1,3 @@
-let sectionTimes = [{
-  "section": 1,
-  "startTime": "08:00",
-  "endTime": "08:45"
-}, {
-  "section": 2,
-  "startTime": "08:50",
-  "endTime": "09:35"
-}, {
-  "section": 3,
-  "startTime": "10:05",
-  "endTime": "10:50"
-}, {
-  "section": 4,
-  "startTime": "10:55",
-  "endTime": "11:40"
-}, {
-  "section": 5,
-  "startTime": "12:30",
-  "endTime": "13:15"
-}, {
-  "section": 6,
-  "startTime": "13:20",
-  "endTime": "14:05"
-}, {
-  "section": 7,
-  "startTime": "14:30",
-  "endTime": "15:15"
-}, {
-  "section": 8,
-  "startTime": "15:20",
-  "endTime": "16:05"
-}, {
-  "section": 9,
-  "startTime": "16:35",
-  "endTime": "17:20"
-}, {
-  "section": 10,
-  "startTime": "17:25",
-  "endTime": "18:10"
-}, {
-  "section": 11,
-  "startTime": "19:30",
-  "endTime": "20:15"
-}, {
-  "section": 12,
-  "startTime": "20:20",
-  "endTime": "21:05"
-},{
-  "section": 13,
-  "startTime": "21:10",
-  "endTime": "21:55"
-}]
 
 // 转换周次，返回整数数组
 function getWeeksArray(str) {
@@ -65,14 +12,14 @@ function getWeeksArray(str) {
     let ranges = str.split(',')
     // 包含 “-” 表明是区间
     ranges.forEach(element => {
-      let start = parseInt(element.split('-')[0])
-      let end = parseInt(element.split('-')[1])
+      let start = Number.parseInt(element.split('-')[0])
+      let end = Number.parseInt(element.split('-')[1])
       for (let i = start; i < end + 1; i++) {
         weekArray.push(i)
       }
     });
   } else {
-    weekArray.push(parseInt(str))
+    weekArray.push(Number.parseInt(str))
   }
   // console.log(weekArray);
   return weekArray
@@ -95,8 +42,8 @@ function getSections(index, str) {
   } else {
     let sections = []
     str = str.substr(0, 5)
-    let start = parseInt(str.split('-')[0])
-    let end = parseInt(str.split('-')[1])
+    let start = Number.parseInt(str.split('-')[0])
+    let end = Number.parseInt(str.split('-')[1])
     for (let i = start; i < end + 1; i++) {
       sections.push({
         section: i,
@@ -154,7 +101,6 @@ function scheduleHtmlParser(html) {
             // console.info("raw", info);
             console.info("result", course);
             result.push(course)
-            // console.info(JSON.stringify(course));
           })
         }
       })
@@ -163,19 +109,14 @@ function scheduleHtmlParser(html) {
   console.info("共", count, "节课");
   console.info(result);
 
-  // 尝试解决实机测试出现的错误 但无效
-  //  "Uncaught SyntaxError：Unexpected token o in JSON at  position 1"
-  // 
-  // result = JSON.stringify(result)
-  // // console.log("JSON.stringify",result);
-  // result = encodeURIComponent(result)
-  // // console.log("encodeURIComponent",result);
-  // result = decodeURIComponent(result)
-  // // console.log("decodeURIComponent",result);
-  // result = JSON.parse(result)
-
   return {
     courseInfos: result,
-    sectionTimes: sectionTimes
   }
+}
+
+function scheduleHtmlProvider(dom = document) {
+  const content = dom.getElementsByClassName('el-table__body-wrapper')
+  let html = content[0].innerHTML
+  let res = scheduleHtmlParser(html)
+  return "<div>" + JSON.stringify(res) + "</div>";
 }
