@@ -162,6 +162,7 @@ function scheduleHtmlParser(html) {
   })
   console.info("共", count, "节课");
   console.info(result);
+  
 
   // 尝试解决实机测试出现的错误 但无效
   //  "Uncaught SyntaxError：Unexpected token o in JSON at  position 1"
