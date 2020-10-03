@@ -127,7 +127,7 @@ function scheduleHtmlParser(html) {
       $(this).find('td').each(function (col, _) {
         if (col != 0) {
           let nodeArray = []
-          $(this).find('div div div')?.each(function (i, elem) {
+          $(this).find('div div div').each(function (i, elem) {
             nodeArray = $(this).children('div').toArray()
             if (nodeArray.length == 0)
               return
