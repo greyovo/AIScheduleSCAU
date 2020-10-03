@@ -54,10 +54,22 @@ let sectionTimes = [{
 }]
 
 function scheduleHtmlParser(html) {
-  let count = 0
-  // console.log(html)
   const $ = cheerio.load(html, { decodeEntities: false })
-  let text = $('div').text()
-  let result = JSON.parse(text)
-  return result
+  let course1 = {
+    name: "操作系统", //课程名字
+    teacher: "李华", //教师
+    weeks: [1, 2, 3, 4], //周次
+    position: "3202", //上课地点
+    day: 2, //星期几
+    sections: [{
+      section: 1
+    }, {
+      section: 2
+    }]
+  }
+  let result = [course1]
+  return {
+    courseInfos: result,
+    sectionTimes: sectionTimes
+  }
 }

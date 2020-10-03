@@ -46,7 +46,7 @@ let sectionTimes = [{
   "section": 12,
   "startTime": "20:20",
   "endTime": "21:05"
-},{
+}, {
   "section": 13,
   "startTime": "21:10",
   "endTime": "21:55"
@@ -113,10 +113,7 @@ function getClassName(str) {
   if (!str) {
     return ""
   }
-  if (str.charAt(0) == "*") {
-    return str.substr(2)
-  }
-  return str
+  return str.charAt(0) == "*" ? str.substr(2) : str
 }
 
 function scheduleHtmlParser(html) {
@@ -129,7 +126,7 @@ function scheduleHtmlParser(html) {
     if (row != null) {
       $(this).find('td').each(function (col, _) {
         if (col != 0) {
-          let nodeArray
+          let nodeArray = []
           $(this).find('div div div')?.each(function (i, elem) {
             nodeArray = $(this).children('div').toArray()
             if (nodeArray.length == 0)
@@ -137,7 +134,7 @@ function scheduleHtmlParser(html) {
             count++;
             let info = []
             for (let i = 3; i < 8; i++) {
-              info.push(nodeArray[i]?.firstChild?.data)
+              info.push($(nodeArray[i]).text().trim())
             }
             // 开始将元素加入对象中
             let course = {
@@ -147,14 +144,10 @@ function scheduleHtmlParser(html) {
               position: info[4] ? info[4] : '', //上课地点
               day: col, //星期几
               sections: getSections(row, info[3]) //第几节
-              // sections: [{
-              //   section: row + 1
-              // }] //第几节
             }
             // console.info("raw", info);
             console.info("result", course);
             result.push(course)
-            // console.info(JSON.stringify(course));
           })
         }
       })
@@ -162,21 +155,17 @@ function scheduleHtmlParser(html) {
   })
   console.info("共", count, "节课");
   console.info(result);
-  
 
   // 尝试解决实机测试出现的错误 但无效
   //  "Uncaught SyntaxError：Unexpected token o in JSON at  position 1"
-  // 
-  // result = JSON.stringify(result)
-  // // console.log("JSON.stringify",result);
-  // result = encodeURIComponent(result)
-  // // console.log("encodeURIComponent",result);
-  // result = decodeURIComponent(result)
-  // // console.log("decodeURIComponent",result);
-  // result = JSON.parse(result)
 
-  return {
-    courseInfos: result,
-    sectionTimes: sectionTimes
-  }
+  result = JSON.stringify(result)
+  // console.log("JSON.stringify",result);
+  result = encodeURIComponent(result)
+  // console.log("encodeURIComponent",result);
+  result = decodeURIComponent(result)
+  // console.log("decodeURIComponent",result);
+  result = JSON.parse(result)
+
+  return { courseInfos: result, sectionTimes: sectionTimes }
 }
