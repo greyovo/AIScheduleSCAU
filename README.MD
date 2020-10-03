@@ -36,21 +36,42 @@ live-server
 ## 开始调试
 
 0. 首先先处理好provider，获取到正确的html片段
-
 1. 将provider获取到的字符串复制到index.js中的`html`中替换
 2. 启动live-server，然后就可以编辑parser了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
 3. 都写完之后再将provider、parser的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)的介绍。
 
+## 注意
+
+常见错误：
+
+<img src="README.assets/common_error_json.png" alt="common_error_json" style="zoom:50%;" />
+
+检查是否存在以下情况（整理自官方技术人员的解答与排查）
+
+1. 避免使用`document`对象；
+
+2. 避免使用正则表达式对象的`exec`方法；
+
+3. 避免在变量后直接使用 `? `判空操作符，但在表达式后作为三元操作符if else的判断是可以的，即：
+
+   ```javascript
+   // 这样不行
+   nodeArray = $(this).children('div')?.toArray()
+                                      ^ 
+   
+   // 这样可以
+   return str.charAt(0) == "*" ? str.substr(2) : str
+   ```
+
 ## 有用的资料
 
-> 以下内容来自开发者群公告
+以下内容来自开发者群公告
 
-- 官方文档
+- 小爱课程表官方文档
   https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb
+  
 - Cheerio官方文档翻译
   https://juejin.im/post/6844904135767097352
-
-米粉分享经验
 
 - 记一次从教务系统导出课程到小爱课程表
   https://www.jianshu.com/p/2083013fc846
