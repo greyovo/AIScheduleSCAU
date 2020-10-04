@@ -61,19 +61,21 @@ function getWeeksArray(str) {
   str = str.match(reg)[0]
   str = str.substr(1, str.length - 3) //去括号
 
-  if (str.includes('-')) {
-    let ranges = str.split(',')
-    // 包含 “-” 表明是区间
-    ranges.forEach(element => {
+  let ranges = str.split(',')
+
+  ranges.forEach(element => {
+    if (!element.includes('-')) {
+      // 没有 ‘-’ 表明只有一个数
+      weekArray.push(parseInt(element))
+    } else {
+      // 包含 “-” 则是区间
       let start = parseInt(element.split('-')[0])
       let end = parseInt(element.split('-')[1])
       for (let i = start; i < end + 1; i++) {
         weekArray.push(i)
       }
-    });
-  } else {
-    weekArray.push(parseInt(str))
-  }
+    }
+  });
   // console.log(weekArray);
   return weekArray
 }
@@ -145,7 +147,7 @@ function scheduleHtmlParser(html) {
               day: col, //星期几
               sections: getSections(row, info[3]) //第几节
             }
-            // console.info("raw", info);
+            console.info("raw", info);
             console.info("result", course);
             result.push(course)
           })
@@ -161,13 +163,13 @@ function scheduleHtmlParser(html) {
 
   // 后来发现原因是使用了 ? 运算符导致的，避免使用即可。
 
-  result = JSON.stringify(result)
-  // console.log("JSON.stringify",result);
-  result = encodeURIComponent(result)
-  // console.log("encodeURIComponent",result);
-  result = decodeURIComponent(result)
-  // console.log("decodeURIComponent",result);
-  result = JSON.parse(result)
+  // result = JSON.stringify(result)
+  // // console.log("JSON.stringify",result);
+  // result = encodeURIComponent(result)
+  // // console.log("encodeURIComponent",result);
+  // result = decodeURIComponent(result)
+  // // console.log("decodeURIComponent",result);
+  // result = JSON.parse(result)
 
   return { courseInfos: result, sectionTimes: sectionTimes }
 }
