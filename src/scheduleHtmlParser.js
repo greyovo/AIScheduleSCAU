@@ -52,17 +52,32 @@ let sectionTimes = [{
   "endTime": "21:55"
 }]
 
-// 转换周次，返回整数数组
+
+/**
+ *  转换周次，返回整数数组
+ *  需要考虑单双周的情况
+ * @param {String} str 
+ * @returns {Array}
+ */
 function getWeeksArray(str) {
   if (str == null || str == "")
     return []
+
+  // 判断单双周
+  let odd = false;
+  let even = false;
+  if (str.includes('单周')) {
+    odd = true
+  } else if (str.includes('双周')) {
+    even = true
+  }
+
   let weekArray = []
   const reg = new RegExp(/(\().*?(\))/g)
   str = str.match(reg)[0]
-  str = str.substr(1, str.length - 3) //去括号
+  str = str.substr(1, str.length - 3) // 去括号
 
   let ranges = str.split(',')
-
   ranges.forEach(element => {
     if (!element.includes('-')) {
       // 没有 ‘-’ 表明只有一个数
@@ -72,7 +87,16 @@ function getWeeksArray(str) {
       let start = parseInt(element.split('-')[0])
       let end = parseInt(element.split('-')[1])
       for (let i = start; i < end + 1; i++) {
-        weekArray.push(i)
+        // 单双周、或者不设单双周
+        if (even && i % 2 == 0) {
+          weekArray.push(i)
+        }
+        else if (odd && i % 2 != 0) {
+          weekArray.push(i)
+        }
+        else if(!even && !odd) {
+          weekArray.push(i)
+        }
       }
     }
   });
@@ -80,7 +104,12 @@ function getWeeksArray(str) {
   return weekArray
 }
 
-// 转换节数
+/**
+ * 转换节数
+ * @param {String} index 
+ * @param {String} str 
+ * @returns {Array}
+ */
 function getSections(index, str) {
   // console.log('第', index, '行', str);
   index++
@@ -110,14 +139,24 @@ function getSections(index, str) {
   }
 }
 
-// 转换课程名，去掉星号*
+
+/**
+ * 转换课程名，去掉星号*
+ * @param {String} str 
+ * @returns {String}
+ */
 function getClassName(str) {
   if (!str) {
     return ""
   }
-  return str.charAt(0) == "*" ? str.substr(2) : str
+  return str.charAt(0) == "*" ? str.substr(2).trim() : str.trim()
 }
 
+/**
+ * 函数入口
+ * @param {String} html 
+ * @returns {Object}
+ */
 function scheduleHtmlParser(html) {
   let count = 0
   // console.log(html)
@@ -147,8 +186,8 @@ function scheduleHtmlParser(html) {
               day: col, //星期几
               sections: getSections(row, info[3]) //第几节
             }
-            console.info("raw", info);
-            console.info("result", course);
+            // console.info("raw", info);
+            console.info(course);
             result.push(course)
           })
         }
@@ -162,14 +201,6 @@ function scheduleHtmlParser(html) {
   //  "Uncaught SyntaxError：Unexpected token o in JSON at  position 1"
 
   // 后来发现原因是使用了 ? 运算符导致的，避免使用即可。
-
-  // result = JSON.stringify(result)
-  // // console.log("JSON.stringify",result);
-  // result = encodeURIComponent(result)
-  // // console.log("encodeURIComponent",result);
-  // result = decodeURIComponent(result)
-  // // console.log("decodeURIComponent",result);
-  // result = JSON.parse(result)
 
   return { courseInfos: result, sectionTimes: sectionTimes }
 }
