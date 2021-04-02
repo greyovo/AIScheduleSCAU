@@ -1,0 +1,383 @@
+[
+  {
+    "name": "大学英语Ⅳ (阅读)[分组03]",
+    "teacher": "徐忠海",
+    "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4606",
+    "day": 1,
+    "sections": [
+      {
+        "section": 1,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 2,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "税法",
+    "teacher": "朱静玉",
+    "weeks": [1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4206",
+    "day": 2,
+    "sections": [
+      {
+        "section": 1,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 2,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "税法",
+    "teacher": "朱静玉",
+    "weeks": [2, 6, 8, 10, 12, 14, 16],
+    "position": "4503",
+    "day": 3,
+    "sections": [
+      {
+        "section": 1,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 2,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "税法",
+    "teacher": "朱静玉",
+    "weeks": [7],
+    "position": "4503",
+    "day": 3,
+    "sections": [
+      {
+        "section": 1,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 2,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "税法",
+    "teacher": "朱静玉",
+    "weeks": [9],
+    "position": "4503",
+    "day": 3,
+    "sections": [
+      {
+        "section": 1,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 2,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "                                                                            毛泽东思想和中国特色社会主义理论体系概论",
+    "teacher": "李俊宏",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4406",
+    "day": 2,
+    "sections": [
+      {
+        "section": 3,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 4,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "                                                                            毛泽东思想和中国特色社会主义理论体系概论",
+    "teacher": "李俊宏",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4408",
+    "day": 4,
+    "sections": [
+      {
+        "section": 3,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 4,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "体育Ⅳ[乒乓球]",
+    "teacher": "李嘉鹏",
+    "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "东区12栋乒乓室",
+    "day": 5,
+    "sections": [
+      {
+        "section": 3,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 4,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "中级财务会计Ⅰ",
+    "teacher": "牟小容",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4701",
+    "day": 1,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "中级财务会计Ⅰ",
+    "teacher": "牟小容",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4706",
+    "day": 2,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "管理学方法论实验",
+    "teacher": "蔡轶",
+    "weeks": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    "position": "",
+    "day": 2,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 9,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 10,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "电子商务概论",
+    "teacher": "彭思喜",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4504",
+    "day": 4,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "线性代数",
+    "teacher": "彭泓毅",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9],
+    "position": "4204",
+    "day": 5,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "线性代数",
+    "teacher": "彭泓毅",
+    "weeks": [1, 2, 3, 4, 6, 7, 8, 9],
+    "position": "4105",
+    "day": 1,
+    "sections": [
+      {
+        "section": 9,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 10,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "管理学方法论实验",
+    "teacher": "蔡轶",
+    "weeks": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    "position": "",
+    "day": 2,
+    "sections": [
+      {
+        "section": 7,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 8,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 9,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 10,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "管理学方法论",
+    "teacher": "蔡轶",
+    "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4503",
+    "day": 1,
+    "sections": [
+      {
+        "section": 11,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 12,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "形势与政策Ⅱ",
+    "teacher": "",
+    "weeks": [6, 7, 8],
+    "position": "",
+    "day": 3,
+    "sections": [
+      {
+        "section": 11,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 12,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "多媒体应用基础",
+    "teacher": "杨振刚",
+    "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "position": "4205",
+    "day": 4,
+    "sections": [
+      {
+        "section": 11,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 12,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  },
+  {
+    "name": "成本会计",
+    "teacher": "于健南",
+    "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "position": "4302",
+    "day": 5,
+    "sections": [
+      {
+        "section": 11,
+        "startTime": "",
+        "endTime": ""
+      },
+      {
+        "section": 12,
+        "startTime": "",
+        "endTime": ""
+      }
+    ]
+  }
+]

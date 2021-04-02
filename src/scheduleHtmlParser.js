@@ -94,7 +94,7 @@ function getWeeksArray(str) {
         else if (odd && i % 2 != 0) {
           weekArray.push(i)
         }
-        else if(!even && !odd) {
+        else if (!even && !odd) {
           weekArray.push(i)
         }
       }
@@ -114,7 +114,7 @@ function getSections(index, str) {
   // console.log('第', index, '行', str);
   index++
   if (!str.includes('节')) {
-    return [{
+    let sections = [{
       section: index * 2 - 1,
       startTime: '',
       endTime: ''
@@ -123,6 +123,14 @@ function getSections(index, str) {
       startTime: '',
       endTime: ''
     }]
+    if (index * 2 == 12) {
+      sections.push({
+        section: 13,
+        startTime: '',
+        endTime: ''
+      })
+    }
+    return sections;
   } else {
     let sections = []
     str = str.substr(0, 5)

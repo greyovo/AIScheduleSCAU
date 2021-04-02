@@ -35,10 +35,11 @@ live-server
 
 ## 开始调试
 
-0. 首先先处理好provider，获取到正确的html片段
-1. 将包含课程表的整个HTML文档保存复制到`/src`中，并命名为`raw_source.html`
-2. 启动live-server，然后就可以编辑parser了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
-3. 都写完之后再将provider、parser的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)的介绍。
+0. 首先先处理好provider，获取到正确的html片段。
+1. 成功后将provider中的内容全部复制到index.js中的同名函数中，以后就可以不用管了
+2. 将包含课程表的整个HTML文档保存复制到`/src`中，并命名为`raw_source.html`
+3. 启动live-server，然后就可以编辑parser了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
+4. 都写完之后再将provider、parser的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)的介绍。
 
 ## 注意
 
