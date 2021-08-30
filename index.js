@@ -1,27 +1,19 @@
 // 此处必须保留
-var cheerio = require('cheerio');
+var cheerio = require("cheerio")
 
-console.log('index.js working...');
+var htmlFile = "sample3.html"
 
-// jQuery是异步函数
+console.log("index.js working...")
+
 $(document).ready(function () {
-    $('#temp').load('/src/raw_source_2.html')
-});
-
-// 因此让其等待jQuery加载了之后再延迟执行
+  $("#temp").load("/src/" + htmlFile)
+  $("#prompt").append(htmlFile + " 中内容如下：")
+})
+// 因此让其等待cheerio加载了之后再延迟执行
 setTimeout(() => {
-    // var html = document.querySelector('#temp').innerHTML
-    var html = scheduleHtmlProvider(document)
-    scheduleHtmlParser(html)
-}, 1000);
-
-/**
- * 将providerd 的代码复制到此 
- * @param {*} dom 
- * @returns 
- */
-function scheduleHtmlProvider(dom = document) {
-    // const content = dom.getElementsByClassName('el-table__body-wrapper')
-    const content = dom.getElementsByClassName('el-table__body-wrapper')
-    return content[0].innerHTML;
-}
+  // var html = document.querySelector('#temp').innerHTML
+  var html = scheduleHtmlProvider(document)
+  $("#temp").empty()
+  $("#temp").append(html)
+  scheduleHtmlParser(html)
+}, 1000)
