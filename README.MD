@@ -35,11 +35,11 @@ live-server
 
 ## 开始调试
 
-0. 首先先处理好provider，获取到正确的html片段。
-1. 成功后将provider中的内容全部复制到index.js中的同名函数中，以后就可以不用管了
-2. 将包含课程表的整个HTML文档保存复制到`/src`中，并命名为`raw_source.html`
-3. 启动live-server，然后就可以编辑parser了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
-4. 都写完之后再将provider、parser的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)的介绍。
+1. 将包含课程表的整个HTML文档保存复制到`/src`中，在index.js中`htmlFile`中输入HTML文件名
+2. 启动live-server
+3. 编写provider，提取出仅包含课程表的最简html片段
+4. 然后就可以编辑parser了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
+5. 都写完之后再将provider、parser的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)的介绍。
 
 ## 注意
 
@@ -53,7 +53,7 @@ live-server
 
 2. 避免使用正则表达式对象的`exec`方法；
 
-3. 避免在变量后直接使用 `? `判空操作符，但在表达式后作为三元操作符if else的判断是可以的，即：
+3. 避免使用如下写法：
 
    ```javascript
    // 这样不行
