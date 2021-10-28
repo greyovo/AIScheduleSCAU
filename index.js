@@ -17,4 +17,4 @@ setTimeout(() => {
   $("#temp").empty()
   $("#temp").append(html)
   scheduleHtmlParser(html)
-}, 1000)
+}, 500)
