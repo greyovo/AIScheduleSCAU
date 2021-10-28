@@ -17,7 +17,7 @@ MIUI 小爱课程表 - 华南农业大学新教务系统课程表解析
 
 ## 准备工作
 
-克隆本仓库到本地，并为浏览器安装小爱课程表的[开发插件](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)
+克隆本仓库到本地，并为浏览器安装小爱课程表的开发插件，见[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)
 
 ### 安装依赖
 
