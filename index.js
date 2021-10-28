@@ -1,6 +1,7 @@
 // 此处必须保留
 var cheerio = require("cheerio")
 
+// 样本html的文件名
 var htmlFile = "sample2.html"
 
 console.log("index.js working...")
