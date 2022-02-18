@@ -2,7 +2,7 @@
 var cheerio = require("cheerio")
 
 // 样本html的文件名
-var htmlFile = "sample2.html"
+var htmlFile = "20220218.html"
 
 console.log("index.js working...")
 
@@ -11,7 +11,7 @@ $(document).ready(function () {
   $("#prompt").append(htmlFile + " 中内容如下：")
 })
 
-// 因此让其等待cheerio加载了之后再延迟执行
+// 等待cheerio加载了之后再延迟执行
 setTimeout(() => {
   var html = scheduleHtmlProvider(document)
   $("#temp").empty()

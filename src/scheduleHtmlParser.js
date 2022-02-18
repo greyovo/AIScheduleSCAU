@@ -85,7 +85,7 @@ let sectionTimes = [
 function getWeeksArray(str) {
   if (str == null || str == "") return []
 
-  // 判断单双周
+  // 判断单双周，若都为 false 表示不区分单双周
   let odd = false
   let even = false
   if (str.includes("单周")) {
@@ -115,7 +115,7 @@ function getWeeksArray(str) {
         } else if (odd && i % 2 != 0) {
           weekArray.push(i)
         } else if (!even && !odd) {
-          weekArray.push(i)
+          weekArray.push(i) // 都为 false 表示不区分单双周
         }
       }
     }
@@ -133,13 +133,14 @@ function getWeeksArray(str) {
 function getSections(index, str) {
   // console.log('第', index, '行', str);
   index++ // 使得 index 从1开始算
+  // 如果传入的参数不包含 “节” 字，表示上课节次是默认的，并且与所在行数 index 相关
   if (!str.includes("节")) {
     switch (index) {
       case 1:
         str = "01-02节" + str
         break
       case 2:
-        str += "03-05节" + str
+        str = "03-05节" + str
         break
       case 3:
         str = "06-07节" + str
@@ -153,6 +154,8 @@ function getSections(index, str) {
       case 6:
         str = "13-15节" + str
         break
+      default:
+        alert("出现错误，请联系开发者")
     }
     return getSections(index - 1, str)
   } else {
@@ -161,11 +164,7 @@ function getSections(index, str) {
     let start = parseInt(str.split("-")[0])
     let end = parseInt(str.split("-")[1])
     for (let i = start; i < end + 1; i++) {
-      sections.push({
-        section: i,
-        startTime: "",
-        endTime: "",
-      })
+      sections.push(sectionTimes[i-1])
     }
     return sections
   }
