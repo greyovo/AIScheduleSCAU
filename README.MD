@@ -27,17 +27,17 @@ npm install
 
 ### 样本准备
 
-获取课表所在页的HTML。具体请看：[小爱同学课程表 · 协助调试指南](https://www.yuque.com/docs/share/1ca58f30-03d5-413f-a2f2-5647ee0fabab?#)
+获取课表所在页的 HTML。具体请看：[小爱同学课程表 · 协助调试指南](https://www.yuque.com/docs/share/1ca58f30-03d5-413f-a2f2-5647ee0fabab?#)
 
 ## 开始编写与调试
 
 > 我这里使用 Visual Studio Code 扩展商店中的 `Live Server`，自行搜索安装即可。将整个文件夹启动到临时服务器，即可实现热更新。
 
-1. 将包含课程表的整个 HTML 文档（样本）保存复制到`/src`中，在 index.js 中`htmlFile`中输入 HTML 文件名
-2. 启动 live-server
-3. 编写 provider，提取出仅包含课程表的最简 html 片段
-4. 然后就可以编辑 parser 了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
-5. 都写完之后再将 provider、parser 的代码复制粘贴到小爱官方提供的扩展`AISchedule`对应的代码处。详情请参照开头的文档。
+1. 将包含课程表的整个 HTML 文档（样本）保存复制到 `/src` 中，在 `index.js` 中 `htmlFile` 中输入 HTML 文件名
+2. 启动 live-server（或其他支持热更新的 Web 容器）
+3. 编写 `./src/scheduleHtmlProvider.js`，提取出仅包含课程表的最简 html 片段
+4. 然后就可以编辑 `./src/scheduleHtmlParser.js` 了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
+5. 都写完之后再将 provider、parser 的代码复制粘贴到小爱官方提供的扩展 `AISchedule` 对应的代码处。详情请参照开头的文档。
 
 ## 注意
 
