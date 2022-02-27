@@ -2,7 +2,7 @@
 
 MIUI 小爱课程表 - 华南农业大学新教务系统课程表解析
 
-开始前请看小爱团队的[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)。
+开始前请看小爱团队的[新版官方文档](https://open-schedule-prod.ai.xiaomi.com/docs/#/help/)。
 
 ## 简述
 
@@ -17,7 +17,7 @@ MIUI 小爱课程表 - 华南农业大学新教务系统课程表解析
 
 ## 准备工作
 
-克隆本仓库到本地，并为浏览器安装小爱课程表的开发插件，见[官方文档](https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb)
+克隆本仓库到本地，并为浏览器安装小爱课程表的开发插件，见[官方文档](https://open-schedule-prod.ai.xiaomi.com/docs/#/help/)
 
 ### 安装依赖
 
@@ -67,7 +67,7 @@ npm install
 以下内容来自开发者群公告
 
 - 小爱课程表官方文档
-  https://ldtu0m3md0.feishu.cn/docs/doccnhZPl8KnswEthRXUz8ivnhb
+  https://open-schedule-prod.ai.xiaomi.com/docs/#/help/
 
 - Cheerio 官方文档翻译
   https://juejin.im/post/6844904135767097352
