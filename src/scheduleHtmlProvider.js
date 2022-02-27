@@ -1,15 +1,18 @@
-function scheduleHtmlProvider(dom = document) {
+async function scheduleHtmlProvider() {
   var updatelog =
-    "【开发者要毕业了, 有没有热心同学想帮忙维护的, 欢迎QQ找我~】\n\n" +
-    "最后更新于2022-02-17, 修复一些问题。感谢热心同学: @亭瞳 的反馈。";
+    "🧐 Hi 开发者要毕业了, 有没有热心同学想帮忙维护的, 欢迎 QQ(598383969) 联系我~\n\n" +
+    "📍 最后更新于 2022-02-27, 适配新版小爱课程表版本。感谢大家的反馈！\n\n"+
+    "🎉 特别感谢 @液态镁\n";
 
-  var info = '项目开源地址：github.com/greyovo/AISchedule_SCAU\n'
+  var info = '\n项目开源地址：github.com/greyovo/AISchedule_SCAU\n'
+  await loadTool('AIScheduleTools')
 
-  alert(
-    "欢迎使用! 如有问题, 请联系开发者 QQ:598383969\n" +
-    info + updatelog
-  )
-  const content = dom.getElementsByClassName("el-table__body-wrapper")
-  // const content = dom.getElementsByTagName("tbody")
-  return content[0].innerHTML
+  await AIScheduleAlert({
+    titleText: '欢迎使用', // 标题内容，字体比较大，不传默认为提示
+    contentText: updatelog + info, // 提示信息，字体稍小，支持使用``达到换行效果，具体使用效果建议真机测试
+    confirmText: '好哒', // 确认按钮文字，可不传默认为确认
+  })
+
+  const content =  document.getElementsByClassName("el-table__body-wrapper")[0].innerHTML
+  return content
 }
