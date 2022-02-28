@@ -1,18 +1,15 @@
 {
-  "name": "aischedule_scau",
+  "name": "local-tools",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "antd-vue": "0.0.1",
-    "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
-    "serve": "^11.3.2",
-    "uniq": "^1.0.1"
+    "ini": "^2.0.0",
+    "node-watch": "^0.7.3",
+    "nodejs-websocket": "^1.7.2",
+    "vm2": "^3.9.9"
   }
 }
