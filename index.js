@@ -1,8 +1,8 @@
 // 此处必须保留
-var cheerio = require("cheerio")
+let cheerio = require("cheerio")
 
-// 样本html的文件名
-var htmlFile = "20220218.html"
+// 样本 html 的文件名
+let htmlFile = "20220218.html"
 let fullPath = `/src/resources/${htmlFile}`
 
 console.log("index.js working...")
