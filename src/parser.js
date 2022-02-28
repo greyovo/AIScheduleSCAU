@@ -232,10 +232,5 @@ function scheduleHtmlParser(html) {
   console.info("共", count, "节课")
   console.info(result)
 
-  // 尝试解决实机测试出现的错误 但无效
-  //  "Uncaught SyntaxError：Unexpected token o in JSON at  position 1"
-
-  // 后来发现原因是使用了 ? 运算符导致的，避免使用即可。
-
-  return { courseInfos: result, sectionTimes: sectionTimes }
+  return result
 }

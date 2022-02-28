@@ -3,25 +3,41 @@
 
 <head>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="./lib/prism.css" rel="stylesheet" />
 </head>
 
-<body style="padding:50px">
+<body style="padding:10px 30px">
     <h1>你好，开发者</h1>
-    <h3>这里是为MIUI小爱课程表适配搭建的简易环境。</h3>
-    <p>更多信息请移步
-        <a href="https://github.com/greyovo/AIScheduleSCAU">Github</a>
+    <h3>这里是为 MIUI小爱课程表 适配搭建的简易环境。</h3>
+    <p id="prompt"> 更多信息请移步
+        <a href="https://github.com/greyovo/AIScheduleSCAU">Github</a>。
     </p>
-    <p>请打开浏览器的控制台查看输出。</p>
-    <p id="prompt"></p>
+    <div id="status-text"></div>
+    <pre><code id="output" class="language-json"></code></pre>
     <div id="temp"></div>
 </body>
 
 <script type="text/javascript" src="./lib/cheerio_bundle.js"></script>
-<script type="text/javascript" src="./lib/AIScheduleTools.js"></script>
-<!-- <script type="text/javascript" src="https://cnbj3-fusion.fds.api.xiaomi.com/miai-fe-aischedule-home-fe/tools/AIScheduleTools.js"></script> -->
-<script type="text/javascript" src="./src/scheduleHtmlProvider.js"></script>
-<script type="text/javascript" src="./src/scheduleHtmlParser.js"></script>
+<script src="./lib/prism.js" data-manual></script>
+<script type="text/javascript"
+    src="https://cnbj3-fusion.fds.api.xiaomi.com/miai-fe-aischedule-home-fe/tools/AIScheduleTools.js"></script>
+<script type="text/javascript" src="./src/provider.js"></script>
+<script type="text/javascript" src="./src/parser.js"></script>
 <script type="text/javascript" src="./index.js"></script>
 
+<style type="text/css">
+    .success {
+        padding: 15px;
+        color: white;
+        background-color: #5fc047;
+        font-size: 20px;
+    }
+    .error {
+        padding: 15px;
+        color: white;
+        background-color: #fd696d;
+        font-size: 20px;
+    }
+</style>
 
 </html>
