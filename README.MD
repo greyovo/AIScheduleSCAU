@@ -6,25 +6,19 @@ MIUI 小爱课程表 - 华南农业大学新教务系统课程表解析
 
 ## 简述
 
-核心文件其实就这两个：
+核心文件其实就这三个：
 
 - `./src/scheduleHtmlProvider.js`
 - `./src/scheduleHtmlParser.js`
 - `./src/timer.js`
 
-其他的 html 和 js 只是为了方便搭建一个本地服务器方便调试。
+其他的 html 和 js 只是为了方便搭建一个本地服务器方便调试。**已更新集成小爱课程表工具箱**（即MIUI弹窗对话框样式，直接按照官方文档编写即可看到效果，无需额外挂载到 window 变量下。）
 
-其中`/lib`下是使用`browserify`将`cheerio`打包为了一个 js，以方便在 index.html 中直接使用。
+其中 `/lib` 下是使用 `browserify` 将 `cheerio` 打包为了一个 js，以方便在 `index.html` 中直接使用。
 
 ## 准备工作
 
 克隆本仓库到本地，并为浏览器安装小爱课程表的开发插件，见[官方文档](https://open-schedule-prod.ai.xiaomi.com/docs/#/help/)
-
-### 安装依赖
-
-```bash
-npm install
-```
 
 ### 样本准备
 
@@ -34,11 +28,11 @@ npm install
 
 > 我这里使用 Visual Studio Code 扩展商店中的 `Live Server`，自行搜索安装即可。将整个文件夹启动到临时服务器，即可实现热更新。
 
-1. 将包含课程表的整个 HTML 文档（样本）保存复制到 `/src` 中，在 `index.js` 中 `htmlFile` 中输入 HTML 文件名
+1. 将包含课程表的整个 HTML 文档（样本）保存复制到 `/src/resources` 中，在 `index.js` 中 `htmlFile` 中修改 HTML 文件名
 2. 启动 live-server（或其他支持热更新的 Web 容器）
 3. 编写 `./src/scheduleHtmlProvider.js`，提取出仅包含课程表的最简 html 片段
 4. 然后就可以编辑 `./src/scheduleHtmlParser.js` 了，有变更时浏览器会自动加载刷新，打开浏览器控制台查看输出结果
-5. 在 `./src/timer.js 中编写课程时间表`
+5. 在 `./src/timer.js` 中编写课程时间表
 6. 都写完之后再将 provider、parser、timer 的代码复制粘贴到小爱官方提供的扩展 `AISchedule` 对应的代码处。详情请参照开头的文档。
 
 ## 注意
