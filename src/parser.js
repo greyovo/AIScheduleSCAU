@@ -76,6 +76,16 @@ let sectionTimes = [
   },
 ]
 
+// 检查是否已存在完全相同的课程
+function existCourse(courseArr, target) {
+  for (let index = 0; index < courseArr.length; index++) {
+    const element = courseArr[index];
+    if (JSON.stringify(element) == JSON.stringify(target))
+      return true
+  }
+  return false
+}
+
 /**
  *  转换周次，返回整数数组
  *  需要考虑单双周的情况
@@ -164,7 +174,7 @@ function getSections(index, str) {
     let start = parseInt(str.split("-")[0])
     let end = parseInt(str.split("-")[1])
     for (let i = start; i < end + 1; i++) {
-      sections.push(sectionTimes[i-1])
+      sections.push(sectionTimes[i - 1])
     }
     return sections
   }
@@ -201,13 +211,13 @@ function scheduleHtmlParser(html) {
           .find("td")
           .each(function (col, _) {
             if (col != 0) {
+              if ((_.attribs.style + "").includes("display:none")) return
               let nodeArray = []
               $(this)
                 .find("div div div")
                 .each(function (i, elem) {
                   nodeArray = $(this).children("div").toArray()
                   if (nodeArray.length == 0) return
-                  count++
                   let info = []
                   for (let i = 3; i < 8; i++) {
                     info.push($(nodeArray[i]).text().trim())
@@ -221,9 +231,12 @@ function scheduleHtmlParser(html) {
                     day: col, //星期几
                     sections: getSections(row, info[3]), //第几节
                   }
-                  // console.info("raw", info);
+                  if (existCourse(result, course)) {
+                    return // 已存在完全相同的课程则不重复导入，避免误报冲突
+                  }
                   console.info(course)
                   result.push(course)
+                  count++
                 })
             }
           })

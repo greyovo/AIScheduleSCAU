@@ -2,8 +2,8 @@ async function scheduleTimer({ providerRes, parserRes } = {}) {
   // 返回时间配置JSON，所有项都为可选项，如果不进行时间配置，请返回空对象
   return {
     totalWeek: 16, // 总周数：[1, 30]之间的整数
-    forenoon: 5, // 上午课程节数：[1, 10]之间的整数
-    afternoon: 7, // 下午课程节数：[0, 10]之间的整数
+    forenoon: 7, // 上午课程节数：[1, 10]之间的整数
+    afternoon: 5, // 下午课程节数：[0, 10]之间的整数
     night: 3, // 晚间课程节数：[0, 10]之间的整数
     sections: [{
       section: 1, // 节次：[1, 30]之间的整数

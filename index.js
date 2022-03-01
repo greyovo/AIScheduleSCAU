@@ -2,7 +2,7 @@
 let cheerio = require("cheerio")
 
 // 样本 html 的文件名
-let htmlFile = "20220218.html"
+let htmlFile = "friday-pm-conflict-hidden.html"
 let fullPath = `/src/resources/${htmlFile}`
 
 console.log("index.js working...")
@@ -39,6 +39,6 @@ setTimeout(async () => {
     $("#output").append(error)
     Prism.highlightAll()
   }
-  $("#temp").empty()
-  $("#temp").append(html)
+  // $("#temp").empty()
+  // $("#temp").append(html)
 }, 500)
